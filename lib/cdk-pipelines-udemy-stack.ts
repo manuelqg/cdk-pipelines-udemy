@@ -67,5 +67,18 @@ export class CdkPipelinesUdemyStack extends cdk.Stack {
       ],
     });
 
+    this.pipeline.addStage({
+      stageName: "Pipeline_Update",
+      actions: [
+        new CloudFormationCreateUpdateStackAction({
+          actionName: "Pipeline_Update",
+          stackName: "CdkPipelinesUdemyStack",
+          templatePath: this.cdkBuildOutput.atPath(
+            "PipelineStack.template.json"
+          ),
+          adminPermissions: true,
+        }),
+      ],
+    });
   }
 }
