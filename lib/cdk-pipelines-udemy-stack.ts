@@ -74,7 +74,7 @@ export class CdkPipelinesUdemyStack extends cdk.Stack {
           actionName: "Pipeline_Update",
           stackName: "CdkPipelinesUdemyStack",
           templatePath: this.cdkBuildOutput.atPath(
-            "PipelineStack.template.json"
+            "CdkPipelinesUdemyStack.template.json"
           ),
           adminPermissions: true,
         }),
