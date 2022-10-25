@@ -8,10 +8,10 @@ phases:
   build:
     commands:
       - npm run build
-      # - npm run test
+      - npm run test
       - npm run cdk -- synth
 
 artifacts:
-  base-directory: cdk.out
+  base-directory: 'cdk.out'
   files:
     - '**/*'
